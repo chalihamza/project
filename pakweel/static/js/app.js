@@ -479,3 +479,7 @@ $(function () {
         }
     }).trigger("resize");
 })(jQuery);
+// message time out
+setTimeout(function(){
+    $('#message').fed0ut('slow');
+} , 4000)

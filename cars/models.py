@@ -6,6 +6,7 @@ from multiselectfield import MultiSelectField
 
 # Create your models here.
 class Car(models.Model):
+
     state_choice = (
         ('PU', 'punjab'),
         ('KPK', 'khyber pukhtankhwa'),
@@ -33,6 +34,11 @@ class Car(models.Model):
         ('Auto start/stop', 'Auto start/stop'),
         ('wind deflector', 'wind deflector'),
         ('Bluetooth handset', 'Bluetooth handset'),
+        # ('Burmester Surround Sound', 'Burmester Surround Sound')
+        # ('Wind Deflector', 'Wind Deflector')
+        # ('Universal Audio Interface', 'Universal Audio Interface')
+        # ('Anti-theft Protection', 'Anti-theft Protection')
+        # ('Automatic Climate Control', 'Automatic Climate Control')
 
     )
     door_choice = (
