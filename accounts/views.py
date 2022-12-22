@@ -2,13 +2,15 @@ from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
+from contacts.models import Contact
+
 
 # Create your views here.
 
 def login(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
         user = auth.authenticate(username=username, password=password)
 
@@ -59,7 +61,11 @@ def register(request):
 
 
 def dashboard(request):
-    return render(request, 'accounts/dashboard.html')
+    user_inquiry = Contact.objects.order_by('created_date').filter(user_id=request.user.id)
+    data = {
+        'inquiries': user_inquiry,
+    }
+    return render(request, 'accounts/dashboard.html', data)
 
 
 def logout(request):
