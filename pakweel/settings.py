@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'django.contrib.humanize',
+    # 'multiselectfield',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
